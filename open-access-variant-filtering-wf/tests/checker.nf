@@ -28,11 +28,11 @@ params.regions_file = "NO_FILE_regions"
 params.analysis_metadata = "NO_FILE_metadata"
 params.vcf_file = "NO_FILE_vcf"
 
-include { OpenAccessVariantFilteringWf } from '../main'
+include { OpenFilterWf } from '../main'
 
 workflow {
   main:
-    OpenAccessVariantFilteringWf(
+    OpenFilterWf(
       params.study_id,
       params.analysis_id,
       params.vcf_file,

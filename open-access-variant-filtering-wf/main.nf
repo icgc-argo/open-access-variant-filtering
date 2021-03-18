@@ -120,7 +120,7 @@ include { cleanupWorkdir as cleanup } from './wfpr_modules/github.com/icgc-argo/
 
 
 // please update workflow code as needed
-workflow OpenAccessVariantFilteringWf {
+workflow OpenFilterWf {
   take:  // update as needed
     study_id
     analysis_id
@@ -189,7 +189,7 @@ workflow OpenAccessVariantFilteringWf {
 // this provides an entry point for this main script, so it can be run directly without clone the repo
 // using this command: nextflow run <git_acc>/<repo>/<pkg_name>/<main_script>.nf -r <pkg_name>.v<pkg_version> --params-file xxx
 workflow {
-  OpenAccessVariantFilteringWf(
+  OpenFilterWf(
     params.study_id,
     params.analysis_id,
     params.vcf_file,
