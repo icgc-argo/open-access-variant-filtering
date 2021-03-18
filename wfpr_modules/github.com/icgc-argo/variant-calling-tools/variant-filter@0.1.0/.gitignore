@@ -67,4 +67,13 @@ docs/_build
 .nextflow*
 work
 outdir
-tests/local-*.json
+.nextflow*
+.idea*
+results
+my-results
+out
+reports
+remote_reports
+params.json
+params.*.json
+wfpr_modules/github.com/*/*/*/tests

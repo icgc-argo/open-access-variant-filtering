@@ -1,0 +1,101 @@
+{
+  "analysisId": "3414534a-47a4-492d-9453-4a47a4192d6d",
+  "studyId": "TEST-PR",
+  "analysisState": "PUBLISHED",
+  "createdAt": "2020-12-02T17:18:32.353334",
+  "updatedAt": "2020-12-02T17:18:32.353334",
+  "firstPublishedAt": "2020-12-02T17:18:32.353334",
+  "publishedAt": "2020-12-02T17:18:32.353334",
+  "analysisStateHistory": [
+    {
+      "initialState": "UNPUBLISHED",
+      "updatedState": "PUBLISHED",
+      "updatedAt": "2020-12-02T17:18:32.353334"
+    }
+  ],
+  "samples": [
+    {
+      "sampleId": "SA610229",
+      "specimenId": "SP210202",
+      "submitterSampleId": "COLO-829",
+      "matchedNormalSubmitterSampleId": "COLO-829-BL",
+      "sampleType": "Total DNA",
+      "specimen": {
+        "specimenId": "SP210202",
+        "donorId": "DO250183",
+        "submitterSpecimenId": "COLO-829",
+        "tumourNormalDesignation": "Tumour",
+        "specimenTissueSource": "Blood derived",
+        "specimenType": "Cell line - derived from tumour"
+      },
+      "donor": {
+        "donorId": "DO250183",
+        "studyId": "TEST-PR",
+        "gender": "Female",
+        "submitterDonorId": "COLO-829"
+      }
+    }
+  ],
+  "files": [
+    {
+      "info": {
+        "analysis_tools": [
+          "CaVEMan"
+        ],
+        "data_category": "Simple Nucleotide Variation"
+      },
+      "objectId": "68a48641-8df4-58e9-9a3f-fbfa5e21e08d",
+      "studyId": "TEST-PR",
+      "analysisId": "3414534a-47a4-492d-9453-4a47a4192d6d",
+      "fileName": "TEST-PR.DO250183.SA610229.wgs.20200513.sanger-wgs.somatic.snv.vcf.gz",
+      "fileSize": 24067,
+      "fileType": "VCF",
+      "fileMd5sum": "855b69e7541ebe8da2fba6971f8a2da5",
+      "fileAccess": "controlled",
+      "dataType": "Raw SNV Calls"
+    },
+    {
+      "info": {
+        "analysis_tools": [
+          "CaVEMan"
+        ],
+        "data_category": "Simple Nucleotide Variation"
+      },
+      "objectId": "09831e63-4e8c-51d1-b454-2f01580bd311",
+      "studyId": "TEST-PR",
+      "analysisId": "3414534a-47a4-492d-9453-4a47a4192d6d",
+      "fileName": "TEST-PR.DO250183.SA610229.wgs.20200513.sanger-wgs.somatic.snv.vcf.gz.tbi",
+      "fileSize": 246,
+      "fileType": "TBI",
+      "fileMd5sum": "6b64780740789c6719399ae1d759edab",
+      "fileAccess": "controlled",
+      "dataType": "VCF Index"
+    }
+  ],
+  "analysisType": {
+    "name": "variant_calling",
+    "version": 7
+  },
+  "workflow": {
+    "inputs": [
+      {
+        "analysis_type": "sequencing_alignment",
+        "tumour_analysis_id": "ad7e2df1-03ea-4dae-be2d-f103ea7dae3a"
+      },
+      {
+        "analysis_type": "sequencing_alignment",
+        "normal_analysis_id": "ce2a49b2-2bda-4ded-aa49-b22bdaadedb3"
+      }
+    ],
+    "run_id": "voluminous_brahmagupta",
+    "genome_build": "GRCh38_hla_decoy_ebv",
+    "workflow_name": "Sanger WGS Variant Calling",
+    "workflow_version": "2.1.0-8-1.dev",
+    "workflow_short_name": "sanger-wgs"
+  },
+  "experiment": {
+    "platform": "ILLUMINA",
+    "experimental_strategy": "WGS"
+  },
+  "variant_class": "Somatic"
+}

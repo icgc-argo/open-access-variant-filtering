@@ -67,4 +67,3 @@ docs/_build
 .nextflow*
 work
 outdir
-tests/local-*.json
