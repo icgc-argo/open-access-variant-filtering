@@ -94,7 +94,7 @@ upload_params = [
 filter_params = [
     'cpus': params.cpus,
     'mem': params.mem,
-    'publish_dir': params.publish_dir,
+    'publish_dir': '',
     'regions_file': params.regions_file,
     'apply_filters': params.apply_filters,
     'output_type': params.output_type,
@@ -144,6 +144,12 @@ workflow OpenFilterWf {
       !analysis_metadata.startsWith('NO_FILE') && \
       !vcf_file.startsWith('NO_FILE')
     ) {
+      if (!params.publish_dir) {
+        exit 1, "When use local inputs, params.publish_dir must be specified."
+      } else {
+        log.info "Use local inputs, outputs will be in: ${params.publish_dir}"
+      }
+
       local_mode = true
       vcf = file(vcf_file)
       vcf_idx = Channel.fromPath(getSec(vcf_file, ['tbi']))
@@ -173,11 +179,18 @@ workflow OpenFilterWf {
     }
 
     // cleanup, skip cleanup when running in local mode
-    if (params.cleanup && !local_mode) {
+    if (params.cleanup) {
+      if (local_mode) {
         cleanup(
-            dnVcf.out.files.concat(vFilter.out, pGenVar.out).collect(),
-            upVcf.out.analysis_id
+          vFilter.out.filtered_vcf.concat(vFilter.out.filtered_vcf_tbi, pGenVar.out).collect(), 
+          true
         )
+      } else {
+        cleanup(
+          dnVcf.out.files.concat(vFilter.out, pGenVar.out).collect(),
+          upVcf.out.analysis_id
+        )
+      }
     }
 
   emit:
