@@ -1,0 +1,8 @@
+{
+    "study_id": "TEST-PR",
+    "analysis_id": "",
+    "vcf_file": "input/TEST-PR.DO250183.SA610229.wgs.20200922.gatk-mutect2.somatic.snv.vcf.gz",
+    "analysis_metadata": "input/ca105e4d-d16b-461c-905e-4dd16b861cc8.gatk-mutect2.snv.json",
+    "regions_file": "reference/open_access.20210318.bed.gz",
+    "publish_dir": "outdir"
+}

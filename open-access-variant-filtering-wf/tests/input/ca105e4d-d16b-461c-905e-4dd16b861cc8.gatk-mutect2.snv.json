@@ -1,0 +1,102 @@
+{
+  "analysisId": "ca105e4d-d16b-461c-905e-4dd16b861cc8",
+  "studyId": "TEST-PR",
+  "analysisState": "PUBLISHED",
+  "createdAt": "2020-12-02T17:18:32.353334",
+  "updatedAt": "2020-12-02T17:18:32.353334",
+  "firstPublishedAt": "2020-12-02T17:18:32.353334",
+  "publishedAt": "2020-12-02T17:18:32.353334",
+  "analysisStateHistory": [
+    {
+      "initialState": "UNPUBLISHED",
+      "updatedState": "PUBLISHED",
+      "updatedAt": "2020-12-02T17:18:32.353334"
+    }
+  ],
+  "samples": [
+    {
+      "sampleId": "SA610229",
+      "specimenId": "SP210202",
+      "submitterSampleId": "COLO-829",
+      "matchedNormalSubmitterSampleId": "COLO-829-BL",
+      "sampleType": "Total DNA",
+      "specimen": {
+        "specimenId": "SP210202",
+        "donorId": "DO250183",
+        "submitterSpecimenId": "COLO-829",
+        "tumourNormalDesignation": "Tumour",
+        "specimenTissueSource": "Blood derived",
+        "specimenType": "Cell line - derived from tumour"
+      },
+      "donor": {
+        "donorId": "DO250183",
+        "studyId": "TEST-PR",
+        "gender": "Female",
+        "submitterDonorId": "COLO-829"
+      }
+    }
+  ],
+  "files": [
+    {
+      "info": {
+        "analysis_tools": [
+          "GATK-Mutect2"
+        ],
+        "data_category": "Simple Nucleotide Variation"
+      },
+      "objectId": "a4071a43-77c9-54c7-b67d-9073fc741882",
+      "studyId": "TEST-PR",
+      "analysisId": "ca105e4d-d16b-461c-905e-4dd16b861cc8",
+      "fileName": "TEST-PR.DO250183.SA610229.wgs.20200922.gatk-mutect2.somatic.snv.vcf.gz",
+      "fileSize": 2896208,
+      "fileType": "VCF",
+      "fileMd5sum": "45e1c12bfdfbcf93297d739321f6ef31",
+      "fileAccess": "controlled",
+      "dataType": "Raw SNV Calls"
+    },
+    {
+      "info": {
+        "analysis_tools": [
+          "GATK-Mutect2"
+        ],
+        "data_category": "Simple Nucleotide Variation"
+      },
+      "objectId": "20a67bb5-b81a-5351-97f7-26b6f1f7faff",
+      "studyId": "TEST-PR",
+      "analysisId": "ca105e4d-d16b-461c-905e-4dd16b861cc8",
+      "fileName": "TEST-PR.DO250183.SA610229.wgs.20200922.gatk-mutect2.somatic.snv.vcf.gz.tbi",
+      "fileSize": 23243,
+      "fileType": "TBI",
+      "fileMd5sum": "45e54b4c1b0ab6c9f907c23d66f58a64",
+      "fileAccess": "controlled",
+      "dataType": "VCF Index"
+    }
+  ],
+  "analysisType": {
+    "name": "variant_calling",
+    "version": 9
+  },
+  "workflow": {
+    "inputs": [
+      {
+        "analysis_type": "sequencing_alignment",
+        "tumour_analysis_id": "94c862ca-8055-4794-8862-ca8055479490"
+      },
+      {
+        "analysis_type": "sequencing_alignment",
+        "normal_analysis_id": "916b95a5-42d7-46a8-ab95-a542d7a6a81e"
+      }
+    ],
+    "run_id": "cheesy_fourier",
+    "session_id": "66956ede-ec51-4758-8f0b-316fa9812fb6",
+    "genome_build": "GRCh38_hla_decoy_ebv",
+    "workflow_name": "GATK Mutect2 Variant Calling",
+    "workflow_version": "4.1.8.0-1.0",
+    "workflow_short_name": "gatk-mutect2"
+  },
+  "experiment": {
+    "platform": "ILLUMINA",
+    "experimental_strategy": "WGS"
+  },
+  "variant_class": "Somatic"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "variant-filter",
+    "version": "0.1.0",
+    "description": "Use bcftools to filter variants",
+    "main": "main.nf",
+    "deprecated": false,
+    "keywords": [
+        "bioinformatics",
+        "vcf",
+        "filter"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/icgc-argo/variant-calling-tools.git"
+    },
+    "container": {
+        "registries": [
+            {
+                "registry": "ghcr.io",
+                "type": "docker",
+                "org": "icgc-argo",
+                "default": true
+            }
+        ]
+    },
+    "dependencies": [
+        "github.com/icgc-argo/data-processing-utility-tools/helper-functions@1.0.0"
+    ],
+    "devDependencies": [],
+    "contributors": [
+        {
+            "name": "lindaxiang",
+            "email": "linda.xiang@oicr.on.ca"
+        }
+    ],
+    "license": "GNU Affero General Public License v3",
+    "bugReport": "https://github.com/icgc-argo/variant-calling-tools/issues",
+    "homepage": "https://github.com/icgc-argo/variant-calling-tools#readme"
+}

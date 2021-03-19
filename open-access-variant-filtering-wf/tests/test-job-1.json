@@ -1,0 +1,8 @@
+{
+    "study_id": "TEST-PR",
+    "analysis_id": "",
+    "vcf_file": "input/TEST-PR.DO250183.SA610229.wgs.20200513.sanger-wgs.somatic.snv.vcf.gz",
+    "analysis_metadata": "input/3414534a-47a4-492d-9453-4a47a4192d6d.sanger-wgs.snv.json",
+    "regions_file": "reference/open_access.20210318.bed.gz",
+    "publish_dir": "outdir"
+}
