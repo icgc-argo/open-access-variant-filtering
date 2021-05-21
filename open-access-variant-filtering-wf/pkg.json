@@ -1,6 +1,6 @@
 {
     "name": "open-access-variant-filtering-wf",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "ICGC-ARGO Open-access Somatic Variant Filtering Workflow",
     "main": "main.nf",
     "deprecated": false,
