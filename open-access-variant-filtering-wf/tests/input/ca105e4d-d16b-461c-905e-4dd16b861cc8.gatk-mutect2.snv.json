@@ -57,7 +57,7 @@
     {
       "info": {
         "analysis_tools": [
-          "GATK-Mutect2"
+          "GATK:Mutect2"
         ],
         "data_category": "Simple Nucleotide Variation"
       },
