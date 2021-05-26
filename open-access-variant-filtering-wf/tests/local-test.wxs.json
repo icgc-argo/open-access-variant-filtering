@@ -1,0 +1,9 @@
+{
+    "study_id": "TEST-PR",
+    "analysis_id": "b9e02b7f-222b-4128-a02b-7f222bf12808",
+    "song_url": "https://song.rdpc-qa.cancercollaboratory.org",
+    "score_url": "https://score.rdpc-qa.cancercollaboratory.org",
+    "api_token": "Your-Token",
+    "regions_file": "reference/open_access.20210318.bed.gz",
+    "publish_dir": "outdir"
+}

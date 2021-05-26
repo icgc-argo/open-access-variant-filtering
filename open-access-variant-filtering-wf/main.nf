@@ -23,7 +23,7 @@
 nextflow.enable.dsl = 2
 name = 'open-access-variant-filtering'
 short_name = 'open-filter'
-version = '0.1.0'  // package version
+version = '0.2.0'
 
 // universal params go here, change default value as needed
 params.container = ""
@@ -41,17 +41,17 @@ params.output_type = ""
 params.apply_filters = [
     'CaVEMan': "PASS", 
     'Pindel': "PASS", 
-    'GATK-Mutect2': "PASS"
+    'GATK:Mutect2': "PASS"
 ]
 params.include = [
     'CaVEMan': "INFO/CLPM=0 && INFO/ASRD>=0.93", 
     'Pindel': "", 
-    'GATK-Mutect2': ""
+    'GATK:Mutect2': ""
 ]
 params.exclude = [
     'CaVEMan': "", 
     'Pindel': "", 
-    'GATK-Mutect2': ""
+    'GATK:Mutect2': ""
 ]
 params.open = true
 
@@ -110,11 +110,11 @@ payloadGenVcf_params = [
     *:(params.payloadGenVcf ?: [:])
 ]
 
-include { songScoreDownload as dnVcf } from './song-score-utils/song-score-download' params(download_params)
+include { SongScoreDownload as dnVcf } from './wfpr_modules/github.com/icgc-argo/nextflow-data-processing-utility-tools/song-score-download@2.6.1/main.nf' params(download_params)
 include { metadataParser as mParser } from "./modules/raw.githubusercontent.com/icgc-argo/data-processing-utility-tools/metadata-parser.0.2.0.0/tools/metadata-parser/metadata-parser.nf"
 include { variantFilter as vFilter } from './wfpr_modules/github.com/icgc-argo/variant-calling-tools/variant-filter@0.1.0/main.nf' params(filter_params)
 include { payloadGenVariantProcessing as pGenVar } from "./wfpr_modules/github.com/icgc-argo/data-processing-utility-tools/payload-gen-variant-processing@0.1.0/main.nf" params(payloadGenVcf_params)
-include { songScoreUpload as upVcf } from './song-score-utils/song-score-upload' params(upload_params)
+include { SongScoreUpload as upVcf } from './wfpr_modules/github.com/icgc-argo/nextflow-data-processing-utility-tools/song-score-upload@2.6.1/main.nf' params(upload_params)
 include { getSecondaryFiles as getSec } from './wfpr_modules/github.com/icgc-argo/data-processing-utility-tools/helper-functions@1.0.0/main.nf'
 include { cleanupWorkdir as cleanup } from './wfpr_modules/github.com/icgc-argo/data-processing-utility-tools/cleanup-workdir@1.0.0/main.nf'
 
@@ -139,7 +139,7 @@ workflow OpenFilterWf {
       dnVcf(study_id, analysis_id)
       vcf = dnVcf.out.files.flatten().first()
       vcf_idx = dnVcf.out.files.flatten().last()
-      vcf_meta = dnVcf.out.song_analysis
+      vcf_meta = dnVcf.out.analysis_json
     } else if (
       !analysis_metadata.startsWith('NO_FILE') && \
       !vcf_file.startsWith('NO_FILE')
