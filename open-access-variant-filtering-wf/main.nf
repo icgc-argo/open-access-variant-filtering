@@ -23,7 +23,7 @@
 nextflow.enable.dsl = 2
 name = 'open-access-variant-filtering'
 short_name = 'open-filter'
-version = '0.2.0'
+version = '0.3.0'
 
 // universal params go here, change default value as needed
 params.container = ""
