@@ -4,6 +4,6 @@
     "song_url": "https://song.rdpc-qa.cancercollaboratory.org",
     "score_url": "https://score.rdpc-qa.cancercollaboratory.org",
     "api_token": "Your-Token",
-    "regions_file": "reference/open_access.20210318.bed.gz",
+    "regions_file": "reference/open_access.gencode_v38.20210520.bed.gz",
     "publish_dir": "outdir"
 }

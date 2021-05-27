@@ -113,7 +113,7 @@ payloadGenVcf_params = [
 include { SongScoreDownload as dnVcf } from './wfpr_modules/github.com/icgc-argo/nextflow-data-processing-utility-tools/song-score-download@2.6.1/main.nf' params(download_params)
 include { metadataParser as mParser } from "./modules/raw.githubusercontent.com/icgc-argo/data-processing-utility-tools/metadata-parser.0.2.0.0/tools/metadata-parser/metadata-parser.nf"
 include { variantFilter as vFilter } from './wfpr_modules/github.com/icgc-argo/variant-calling-tools/variant-filter@0.1.0/main.nf' params(filter_params)
-include { payloadGenVariantProcessing as pGenVar } from "./wfpr_modules/github.com/icgc-argo/data-processing-utility-tools/payload-gen-variant-processing@0.1.0/main.nf" params(payloadGenVcf_params)
+include { payloadGenVariantProcessing as pGenVar } from "./wfpr_modules/github.com/icgc-argo/data-processing-utility-tools/payload-gen-variant-processing@0.2.0/main.nf" params(payloadGenVcf_params)
 include { SongScoreUpload as upVcf } from './wfpr_modules/github.com/icgc-argo/nextflow-data-processing-utility-tools/song-score-upload@2.6.1/main.nf' params(upload_params)
 include { getSecondaryFiles as getSec } from './wfpr_modules/github.com/icgc-argo/data-processing-utility-tools/helper-functions@1.0.0/main.nf'
 include { cleanupWorkdir as cleanup } from './wfpr_modules/github.com/icgc-argo/data-processing-utility-tools/cleanup-workdir@1.0.0/main.nf'
